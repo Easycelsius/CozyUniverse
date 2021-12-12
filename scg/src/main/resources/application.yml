@@ -1,0 +1,40 @@
+server:
+  port: 9000
+---
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: Spring Cloud Gateway GlobalFilter
+            preLogger: true
+            postLogger: true
+      # GatewayURI(localhost:8080)/user/주소로 서비스 유입시 user-svc 호출
+      routes:
+        - id: user-svc
+          uri: http://localhost:9001/
+          # 조건부
+          predicates: 
+            - Path=/user/**
+          # user-svc 호출 전 호출되는 필터
+          filters: 
+            - name: UserFilter
+              # 필터 소스 내에서 사용되는 인자값
+              args: 
+                baseMessage: Spring Cloud Gateway UserFilter
+                preLogger: true
+                postLogger: true
+                
+
+                
+#        - id: other-svc
+#          uri: http://localhost:8082/
+#          predicates:
+#            - Path=/cafe/**
+#          filters:
+#            - name: CafeFilter
+#              args:
+#                baseMessage: Spring Cloud Gateway OtherFilter
+#                preLogger: true
+#                postLogger: true

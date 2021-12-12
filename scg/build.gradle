@@ -1,0 +1,40 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'gateway'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2021.0.0")
+}
+
+dependencies {
+	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j' // 장애 전파 방지 : Hystrix 개발 진행 x -> resilience4j 추천
+	implementation 'org.springframework.cloud:spring-cloud-starter-gateway' // SCG 라이브러리
+	implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer' // 로드밸런싱을 위한 라이브러리
+	compileOnly 'org.projectlombok:lombok' // Getter, Setter, 생성자를 위한 라이브러리
+	developmentOnly 'org.springframework.boot:spring-boot-devtools' // 개발자 사용 도구
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-stub-runner' // Contract Test를 하기 위한 라이브러리 : 서비스 제공자와 사용자간의 계약을 검증하는 테스트
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		// mavenBom "org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR2" // Spring Boot 2.1.x 버전
+        // mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE" // Spring Boot 2.2.x 버전
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
