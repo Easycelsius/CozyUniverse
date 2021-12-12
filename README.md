@@ -20,7 +20,7 @@
 
 * Apache Kafka
 
-* Redis
+
 
   
 
@@ -34,12 +34,14 @@
 ### DB
 
 * PostgreDB
-* 가능하면 DynamoDB
-
+* DynamoDB
+* Redis
+* Cassandra
 
 
 ### 기타
 
+* Java 1.8
 * (추후) Docker & Kubernetes
 
 
