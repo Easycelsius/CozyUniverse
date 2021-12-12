@@ -1,0 +1,42 @@
+server:
+  port: 9001
+---
+spring:
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: update
+  devtools:
+    restart:
+      exclude: build/**
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/testdb
+    username: test
+    password: test  
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mariadb://${jdbc:postgresql}:${DB_PORT:5432}/${DB_DATABASE:testdb}
+    username: ${DB_USER:test}
+    password: ${DB_PASSWORD:test}
+
