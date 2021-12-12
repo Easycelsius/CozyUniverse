@@ -40,6 +40,7 @@
 
 ### 기타
 
+* Java 1.8
 * (추후) Docker & Kubernetes
 
 
