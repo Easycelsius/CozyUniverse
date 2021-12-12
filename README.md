@@ -20,7 +20,7 @@
 
 * Apache Kafka
 
-* Redis
+
 
   
 
@@ -34,8 +34,9 @@
 ### DB
 
 * PostgreDB
-* 가능하면 DynamoDB
-
+* DynamoDB
+* Redis
+* Cassandra
 
 
 ### 기타
