@@ -10,7 +10,7 @@ spring:
             baseMessage: Spring Cloud Gateway GlobalFilter
             preLogger: true
             postLogger: true
-      # GatewayURI(localhost:8080)/user/주소로 서비스 유입시 user-svc 호출
+      # GatewayURI(localhost:9000)/user/주소로 서비스 유입시 user-svc 호출
       routes:
         - id: user-svc
           uri: http://localhost:9001/
