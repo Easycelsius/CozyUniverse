@@ -5,22 +5,27 @@
 
 ## 기술적 활용 목표
 
+### 언어
+
+- ~~Java~~ (1.8)
+- JavaScript
+- Go
+
+
+
 ### 설계
 
 * MSA 구조
 * Saga 패턴 구현
+* Docker
+* Kubernetes
 
 
 
 ### 백엔드 (WAS)
 
-* Spring Cloud
-
-* Elastic search
-
-* Apache Kafka
-
-
+* ~~Spring Cloud~~
+* ~~Spring Boot~~
 
   
 
@@ -31,18 +36,28 @@
 
 
 
+### 미들웨어
+
+* GraphQL
+* Elastic search
+* Apache Kafka
+* RabbitMQ
+
+
+
 ### DB
 
-* PostgreDB
+* ~~PostgreDB~~
 * DynamoDB
 * Redis
 * Cassandra
 
 
-### 기타
 
-* Java 1.8
-* (추후) Docker & Kubernetes
+### 기능구현
+
+* 프론트단 : Site heat map
+* 백엔드 : 결제 시스템
 
 
 
