@@ -48,8 +48,14 @@
 - Predicate (조건부) : Java8의 Function Predicate
   - Input Type = Spring Framework ServerWebExchange
   - Header 나 Parameter 같은 HTTP 요청의 모든 항목 비교 가능
+  - Handler Mapping 시에 필요한 URI 정보나, Path 정보를 확인하는 주체
 - Filter (필터) : 특정 팩토리 구성된 Spring Framework GatewayFilter 인스턴스
+  - Handler Mapping이 된 후 들어온 요청에 대한 필터 작업 수행
   - Fileter에서는 다운스트림 요청 전후에 요청/응답 수정 가능
+  - Pre Filter : 특정 작업이 일어나기 전에 지정
+  - Post Filter : 특정 작업이 끝난 후에 지정
+- Gateway Handler Mapping
+  - Gateway가 Client로부터 어떤 요청이 왔는지 확인하고 Mapping 하는 작업 수행
 
 
 
