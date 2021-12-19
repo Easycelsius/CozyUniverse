@@ -51,9 +51,59 @@ Eureka는 단지 서비스의 위치만을 표현하는 역할로 보통 Spring 
 ## 클라이언트 구성 방법
 
 1. 프로젝트생성
+
 2. 의존성 추가
+
+   ```apl
+   ext {
+   	set('springCloudVersion', "2021.0.0")
+   }
+   ```
+
+   ```apl
+   dependencies {
+   	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+   }
+   ```
+
+   ```apl
+   dependencyManagement {
+   	imports {
+       	mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"    
+       }
+   }
+   ```
+
 3. application.yml 작성
+
+   ```apl
+   server:
+     port: 포트번호
+   
+   spring:
+     application:
+       name: 어플리케이션_이름
+   
+   eureka:
+     instance:
+       instance-id: 대쉬보드에 식별하기 위한 인스턴스 아이디
+   
+     client:
+       register-with-eureka: true
+       fetch-registry: true
+       service-url:
+         defaultZone: http://localhost:8999/eureka
+   ```
+
+   - **server.port** : 서버의 포트 번호
+   - **spring.application.name** : 애플리케이션 서버의 이름
+   - **eureka.instance.instance-id** 유레카가 인식할 instance id, 대쉬보드에서 식별하는 용도
+   - **eureka.client.register-with-eureka & fetch-registry** 이번에는 해당 서비스가 클라이언트로 인식되어야 하므로 true
+   - **eureka.client.service-url.defaultZone** : eureka server 가 위치하고 있는 기본 주소 기재
+     - **defaultZone 같은 경우 꼭 Camel Case로 기재해야 함**
+
 4. 해당 Application에 @EnableDiscoveryClient 어노테이션 추가
+
 5. 각각 서버의 Controller 생성
 
 

@@ -14,3 +14,6 @@ eureka:
     register-with-eureka: false
     # 자기 자신을 디스커버리에 등록하겠는가에 대한 설정 (현재는 자기자신을 등록하지 않음으로 false)
     fetch-registry: false
+    ## 아래 설정이 없으면 기본 포트로 8761로 설정되기 때문에 포트를 변경했다면 아래와 같이 진행
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/

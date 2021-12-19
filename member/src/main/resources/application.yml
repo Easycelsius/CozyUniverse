@@ -1,5 +1,20 @@
 server:
   port: 9001
+  
+spring:
+  application:
+    name: member-service
+
+eureka:
+  instance:
+    instance-id: member-microservice-instance
+
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8999/eureka
+  
 ---
 spring:
   profiles:
