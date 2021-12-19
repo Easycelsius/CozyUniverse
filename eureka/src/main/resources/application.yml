@@ -1,0 +1,16 @@
+
+# 해당 유레카 서버가 동작하는 서버 포트 지정 (일반적을오는 8761 사용)
+server:
+  port: 8999
+  
+# Application 이름을 지정하는 것, 앞으로 모든 서비스를 application.name으로 식별
+spring:
+  application:
+    name: discovery-service
+      
+eureka:
+  client:
+    # 해당 서버를 클라이언트로 동작시키겠는가에 대한 설정 (현재는 서버임으로 false로 해야 함) 
+    register-with-eureka: false
+    # 자기 자신을 디스커버리에 등록하겠는가에 대한 설정 (현재는 자기자신을 등록하지 않음으로 false)
+    fetch-registry: false

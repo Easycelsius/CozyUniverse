@@ -41,7 +41,20 @@ Eureka는 단지 서비스의 위치만을 표현하는 역할로 보통 Spring 
 2. 의존성 추가
 3. application.yml 추가
 4. DiscoveryApplication 에 `@EnableEurekaServer` 등록
-5. Eureka Dashboard
+5. Eureka Dashboard에서 확인하기
+   - localhost:포트번호
+
+6. 클라이언트 구성하기
+
+
+
+## 클라이언트 구성 방법
+
+1. 프로젝트생성
+2. 의존성 추가
+3. application.yml 작성
+4. 해당 Application에 @EnableDiscoveryClient 어노테이션 추가
+5. 각각 서버의 Controller 생성
 
 
 
