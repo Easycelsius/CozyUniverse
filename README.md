@@ -26,7 +26,7 @@
 
 * ~~Spring Cloud~~
 * ~~Spring Boot~~
-
+* ~~Spring Cloud Eureka~~
   
 
 ### 프론트엔드
