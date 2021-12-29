@@ -10,7 +10,7 @@
 - ~~Java~~ (1.8)
 - JavaScript
 - Go
-
+- Kotlin
 
 
 ### 설계
@@ -33,6 +33,8 @@
 
 * Next.js : SSR / CSR 구현
 * Nginx : 웹 서버
+* Angular
+* Vue.js
 
 
 
@@ -51,6 +53,14 @@
 * DynamoDB
 * Redis
 * Cassandra
+
+
+
+### Moblie
+
+* Android
+* iOS
+* Deeplink
 
 
 
