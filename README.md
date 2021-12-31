@@ -26,7 +26,7 @@
 
 ### 백엔드 (WAS)
 
-* ~~Spring Cloud~~
+* ~~Spring Cloud Gateway~~
 * ~~Spring Boot~~
 * ~~Spring Cloud Eureka~~
   
